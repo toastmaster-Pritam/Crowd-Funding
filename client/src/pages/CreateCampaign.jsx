@@ -13,12 +13,12 @@ const CreateCampaign = () => {
   const [isLoading, setIsLoading] = useState(false);
   const {createCampaign}=useStateContext()
   const [form, setForm] = useState({
-    name: "",
-    title: "",
-    description: "",
-    target: "",
-    deadline: "",
-    image: "",
+    name: '',
+    title: '',
+    description: '',
+    target: '',
+    deadline: '',
+    image: '',
   });
 
   const handleFormInputChange = (fieldname, e) => {
@@ -27,6 +27,7 @@ const CreateCampaign = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     checkIfImage(form.image, async (exists)=>{
       if(exists) {
         setIsLoading(true)
